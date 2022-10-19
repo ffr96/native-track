@@ -16,10 +16,10 @@ export const LoginForm = () => {
     if (typeof user === 'string')
       dispatch(setNotification({ message: 'Error logging in', type: 'error' }));
     else {
+      await storage.setItem(user);
       dispatch(
         setNotification({ message: 'Successfuly logged in', type: 'success' })
       );
-      await storage.setItem(user);
       dispatch(setUser(user));
     }
   };

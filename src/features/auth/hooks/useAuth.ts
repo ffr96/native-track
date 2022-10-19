@@ -21,7 +21,7 @@ export const useAuth = () => {
         dispatch(setUser(user));
       }
     };
-    if (!user) void getAuth();
+    if (!user.token) void getAuth();
   }, []);
 
   return user;

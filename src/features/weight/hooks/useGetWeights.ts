@@ -4,11 +4,11 @@ import type { Weight } from '@/types/weights';
 import type { User } from '@/types/user';
 import { getWeights } from '../api/getWeights';
 
-type GetWeightsReturn = {
-  weight: Weight[];
+export type GetWeightsReturn = {
+  weights: Weight[];
   isLoading: boolean;
   error: boolean;
-  refetchLogs: () => void;
+  refetchWeights: () => void;
 };
 
 /**
@@ -17,11 +17,11 @@ type GetWeightsReturn = {
  */
 
 export const useGetWeights = (user: User, page?: number): GetWeightsReturn => {
-  const [weight, setLogs] = useState<Weight[]>([]);
+  const [weights, setLogs] = useState<Weight[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const fetchLogs = async () => {
+  const fetchWeights = async () => {
     setIsLoading(true);
     const weight = await getWeights({ id: user.id, token: user.token, page });
     if (typeof weight !== 'string') {
@@ -33,8 +33,8 @@ export const useGetWeights = (user: User, page?: number): GetWeightsReturn => {
   };
 
   useEffect(() => {
-    void fetchLogs();
+    void fetchWeights();
   }, []);
 
-  return { weight, isLoading, error, refetchLogs: fetchLogs };
+  return { weights, isLoading, error, refetchWeights: fetchWeights };
 };

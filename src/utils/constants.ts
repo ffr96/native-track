@@ -4,6 +4,6 @@ export const baseUrl = 'http://192.168.0.38:3001';
 // hosted
 //export const baseUrl = 'https://gmtrack2.herokuapp.com';
 
-const MAX_VIEW = '84%';
-const TOP_VIEW = '8%';
-const BOTTOM_VIEW = '8%';
+export const MAX_VIEW_HEIGHT = '84%';
+export const TOP_VIEW_HEIGHT = '8%';
+export const BOTTOM_VIEW_HEIGHT = '8%';

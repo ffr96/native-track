@@ -1,4 +1,5 @@
 import { Box } from '@/components/Layout/Box';
+import { MAX_VIEW_HEIGHT } from '@/utils/constants';
 
 /**
  * Keep both forms view consistent.
@@ -7,7 +8,7 @@ import { Box } from '@/components/Layout/Box';
 export const ViewForm = ({ children }: { children: React.ReactNode }) => {
   return (
     <Box
-      height={'92%'}
+      height={MAX_VIEW_HEIGHT}
       justifyContent='center'
       backgroundColor={'viewLightBackground'}
     >

@@ -22,7 +22,7 @@ export const getLogs = async ({
   page,
 }: Omit<User, 'username'> & QueryProps) => {
   let queryPage = '';
-  if (page) {
+  if (page !== undefined) {
     queryPage = `page=${page}`;
   }
   try {

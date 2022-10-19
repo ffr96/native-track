@@ -10,10 +10,10 @@ export const DisplayMeasure = ({ measures }: { measures?: Measures }) => {
 
   for (const elem in measures) {
     if (elem === 'id') continue; // skip id if present on object
-    i++;
     const even = i % 2 === 0;
+    i++;
     measureDisplay.push(
-      <Box p='s'>
+      <Box p='s' key={i}>
         <Box
           flexDirection={'row'}
           backgroundColor={
