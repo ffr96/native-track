@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-native';
-import { Overview, Logs, Weight, NotFound } from '../features';
+import { Overview, Logs, Weight, NotFound, WeightForm } from '../features';
 
 const Private = () => {
   return (
@@ -7,6 +7,7 @@ const Private = () => {
       <Route path='/' element={<Overview />} />
       <Route path='log' element={<Logs />} />
       <Route path='weight' element={<Weight />} />
+      <Route path='wform' element={<WeightForm />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   );

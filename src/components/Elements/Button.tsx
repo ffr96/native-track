@@ -7,6 +7,7 @@ import {
   createVariant,
 } from '@shopify/restyle';
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { Loading } from './Loading';
 
 const ButtonBase = createBox<Theme, TouchableOpacityProps>(TouchableOpacity);
 
@@ -26,6 +27,7 @@ export const Button = ({ loading = false, variant, ...props }: ButtonProps) => {
       flexDirection={'row'}
       padding={'s'}
       justifyContent='center'
+      alignItems={'center'}
       minWidth={150}
       maxWidth={300}
       borderRadius={5}
@@ -33,8 +35,11 @@ export const Button = ({ loading = false, variant, ...props }: ButtonProps) => {
       variant={variant}
       {...props}
     >
-      <Text fontWeight={'600'}>
-        {loading}
+      <Loading loading={loading} />
+      <Text
+        color={variant === 'inverse' ? 'viewLightBackground' : 'mainText'}
+        fontWeight={'600'}
+      >
         {props.children}
       </Text>
     </CustomButton>

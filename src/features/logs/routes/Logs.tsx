@@ -11,7 +11,7 @@ export const Logs = () => {
   const logs = useGetLogs(user);
 
   return (
-    <Box height={MAX_VIEW_HEIGHT} justifyContent='center' width={'100%'}>
+    <Box height={MAX_VIEW_HEIGHT} justifyContent='center'>
       <Displaylogs {...logs} />
       <ErrorFetching error={logs.error} refetchLogs={logs.refetchLogs} />
     </Box>

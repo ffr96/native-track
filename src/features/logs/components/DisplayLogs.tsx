@@ -4,6 +4,7 @@ import { DisplayLog } from './DisplayLog';
 import { Separator } from '@/components/Layout/Separator';
 import { Text } from '@/components/Elements/Text';
 import { GetLogsReturn } from '../hooks/useGetLogs';
+import { LoadingScreen } from '@/features/misc/components/LoadingScreen';
 
 type DisplayLogsProp = GetLogsReturn;
 
@@ -18,7 +19,7 @@ export const Displaylogs = ({
   refetchLogs,
 }: DisplayLogsProp) => {
   if (error) return null;
-  if (isLoading) return <Text>Loading...</Text>;
+  if (isLoading) return <LoadingScreen />;
 
   return (
     <FlatList

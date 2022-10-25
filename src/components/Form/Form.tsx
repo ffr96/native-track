@@ -38,7 +38,7 @@ export const Form = <FormValues extends Record<string, unknown>>({
     >
       {title && <Text variant={'header'}>{title}</Text>}
       {React.Children.map(children, (child) => {
-        return child.props.name
+        return child?.props.name
           ? React.createElement(child.type, {
               ...{
                 ...child.props,

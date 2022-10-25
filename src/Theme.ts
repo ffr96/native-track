@@ -99,6 +99,11 @@ const theme = createTheme({
       backgroundColor: 'buttonPrimaryDanger',
       borderColor: 'buttonDarkDanger',
     },
+    inverse: {
+      backgroundColor: 'mainText',
+      borderColor: 'viewPrimaryBackground',
+      color: 'mainBackground',
+    },
   },
   notificationVariants: {
     success: {
